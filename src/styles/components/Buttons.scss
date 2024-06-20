@@ -1,0 +1,15 @@
+.btn-rounded-full {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    background-color: $background-color_6;
+    /* border: 1px solid #D2D6DC; */
+    padding: 0.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #fff;
+    transition: all 0.3s;
+    height: 32px;
+    width: 32px;
+}

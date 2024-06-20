@@ -1,0 +1,165 @@
+@import '../utils.scss';
+
+/**/
+/**/
+/**/
+/**/
+/**/
+/*Nav Mobile*/
+
+.header {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	height: 85px;
+	padding: 5px 10%;
+	.logo {
+		cursor: pointer;
+		margin-right: auto;
+		img {
+			/* height: 70px;
+			width: auto; */
+			transition: all 0.3s;
+			&:hover {
+				transform: scale(1.2);
+			}
+		}
+	}
+	.nav-links {
+		list-style: none;
+		li {
+			display: inline-block;
+			padding: 0 20px;
+			&:hover {
+				transform: scale(1.1);
+			}
+		}
+		a {
+			font-size: 700;
+			color: $color_1;
+			&:hover {
+				color: $color_2;
+			}
+		}
+	}
+	.btn {
+		/* margin-left: 20px;
+		font-weight: 700;
+		color: $color_3;
+		padding: 9px 25px;
+		background: #eceff1;
+		border-radius: 50px; */
+		height: 32px;
+		width: 32px;
+		/* transition: all 0.3s ease 0s; */
+		/* &:hover {
+			background-color: $background-color_4;
+			color: $color_2;
+			transform: scale(1.1);
+		} */
+	}
+	.menu {
+		button {
+			margin-left: 20px;
+			font-weight: 700;
+			color: $color_3;
+			padding: 9px 25px;
+			background: transparent;
+			border: none;
+			border-radius: 50px;
+			cursor: pointer;
+			transition: all 0.3s ease 0s;
+			&:hover {
+				background-color: $background-color_3;
+				color: $color_2;
+				transform: scale(1.1);
+			}
+		}
+	}
+	a {
+		text-decoration: none;
+	}
+	.overlay {
+		height: 100%;
+		width: 0;
+		position: fixed;
+		z-index: 1;
+		left: 0;
+		top: 0;
+		/* background-color: $background-color_5; */
+		background: linear-gradient(220deg, $background-color_10 0%, $background-color_11 100%);
+		overflow: hidden;
+		transition: all 0.3s linear 0s;
+
+		&--open {
+			position: absolute;
+			left: 0;
+			width: 100vw;
+			flex-direction: column;
+			align-items: center;
+			/* transition: all 0.3s easeInOut 0s; */
+		}
+		.overlay-content {
+			display: flex;
+			height: 100%;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+		}
+		a {
+			padding: 15px;
+			font-size: 36px;
+			display: block;
+			transition: all 0.3s ease 0s;
+			font-weight: 700;
+			color: $color_1;
+			&:hover {
+				color: $color_2;
+			}
+			&:focus {
+				color: $color_2;
+			}
+		}
+		.btn-close {
+			position: absolute;
+			top: 20px;
+			right: 45px;
+			font-size: 3rem;
+		}
+	}
+}
+.overlay {
+	a {
+		&:hover {
+			transform: scale(1.1);
+		}
+	}
+}
+.menu {
+	display: none;
+}
+@media screen and (max-width: 800px) {
+	.nav-links {
+		display: none;
+	}
+	.btn {
+		display: none;
+	}
+	.menu {
+		display: inherit;
+	}
+}
+@media screen and (max-height:450px) {
+	.header {
+		.overlay {
+			a {
+				font-size: 20px;
+			}
+			.btn-close {
+				font-size: 40px;
+				top: 15px;
+				right: 35px;
+			}
+		}
+	}
+}

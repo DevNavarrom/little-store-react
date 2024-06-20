@@ -1,0 +1,65 @@
+@import '../utils.scss';
+@import '../components/Buttons.scss';
+
+.container {
+    border-radius: 1rem;
+    /* box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px; */
+    box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+    background-color: $color_4;
+    
+    @include responsive-width("(max-width: 640px)", 80%); // sm
+    @include responsive-width("(min-width: 768px)", 25%); // md
+
+    &:hover {
+        /* transition: 1 1s ease 0s; */
+        animation: pulseRegular 1s ease 0s 1 normal forwards;
+    }
+
+    &--content {
+        @include padding($padding);
+        @include text-center;
+        
+        @include responsive-padding("(min-width: 640px)", 9); // sm
+        @include responsive-padding("(min-width: 768px)", 7); // md
+        @include responsive-padding("(min-width: 1280px)", 9); // xl
+
+        &--title {
+            margin-bottom: 1rem;
+            display: block;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: $color_3;
+            @include responsive-size("(min-width: 640px)", 1.375rem);//sm
+            @include responsive-size("(min-width: 768px)", 1.25rem);//md
+            @include responsive-size("(min-width: 1024px)", 1.375rem);//lg
+            @include responsive-size("(min-width: 1280px)", 1.25rem);//xl
+            @include responsive-size("(min-width: 1536px)", 1.375rem);//2xl
+
+            &:hover {
+                color: $color_5;
+            }
+        }
+
+        &--bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-direction: row;
+            padding: 1rem;
+        }
+    }
+}
+
+@keyframes pulseRegular {
+	0% {
+		transform: scale(1);
+	}
+
+	50% {
+		transform: scale(1.1);
+	}
+
+	100% {
+		transform: scale(1);
+	}
+}
