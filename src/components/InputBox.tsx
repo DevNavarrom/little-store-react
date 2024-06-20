@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 interface Props {
     type: string;
     placeholder: string;
@@ -10,11 +8,8 @@ interface Props {
 
 const InputBox = ({ type, placeholder, name, value, onChange }: Props) => {
 
-  const [initValue, setInitValue] = useState<string>('' && value);
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     onChange(e);
-    setInitValue(e.currentTarget.value);
   }
 
   return (
@@ -23,7 +18,7 @@ const InputBox = ({ type, placeholder, name, value, onChange }: Props) => {
         type={type}
         placeholder={placeholder}
         name={name}
-        value={initValue}
+        value={value}
         onChange={handleChange}
         className="w-full rounded-xl border-stroke bg-transparent px-5 py-2 text-base text-body-color outline-none border-primary shadow-none"
       />

@@ -13,7 +13,7 @@ const Home: React.FC = () => {
 
   useEffect(() => {
     dispatch(fetchProducts());
-  }, [dispatch, products]);
+  }, [dispatch]);
 
   const handleCart = () => {
     setShowCart(!showCart);

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import {v4 as uuidv4} from 'uuid';
 import { Product } from "../../@types/Product";
 import { addProducts } from "../../store/features/products/products.slice";
@@ -9,7 +9,6 @@ import addIcon from "../../assets/plus-solid.svg";
 
 const ProductAdmin: React.FC = () => {
     const [ product, setProduct ] = useState<Product>({id: '', name: '', price: 0, amount: 0});
-    const [isAdd, setIsAdd] = useState<boolean>(false);
 
     const dispatch = useAppDispatch();
 
@@ -20,28 +19,16 @@ const ProductAdmin: React.FC = () => {
         });
     }
 
-    const addProduct = () => {
-        let uuid = uuidv4();
-
-        setProduct((prevProduct) => ({
-            ...prevProduct,
-            id: uuid,
-        }));
-
-        setIsAdd(true);
-    }
-
     const handleAddProduct = () => {
-        addProduct();
-    };
+        const uuid = uuidv4();
+        const newProduct = { ...product, id: uuid };
 
-    useEffect(() => {
-        if (isAdd && product.price > 0 && product.amount > 0 && product.name && product.id) {
-            dispatch(addProducts(product));
-            setIsAdd(false);
-            setProduct({id: '', name: '', price: 0, amount: 0});
+        if (newProduct.price > 0 && newProduct.amount > 0 && newProduct.name) {
+            dispatch(addProducts(newProduct));
+            
+            setProduct({ id: '', name: '', price: 0, amount: 0 });
         }
-    }, [isAdd, product, dispatch]);
+    };
 
     return (
         <div className="px-4">
