@@ -11,9 +11,13 @@ const Home: React.FC = () => {
   const products: Product[] = useAppSelector((state: RootState) => state.products.products);
   const dispatch = useAppDispatch();
 
+  const handleFetchProducts = () => {
+    if (products.length === 0) dispatch(fetchProducts());
+  }
+
   useEffect(() => {
-    dispatch(fetchProducts());
-  }, [dispatch]);
+    handleFetchProducts();
+  }, []);
 
   const handleCart = () => {
     setShowCart(!showCart);

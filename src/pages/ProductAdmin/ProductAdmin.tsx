@@ -23,7 +23,7 @@ const ProductAdmin: React.FC = () => {
         const uuid = uuidv4();
         const newProduct = { ...product, id: uuid };
 
-        if (newProduct.price > 0 && newProduct.amount > 0 && newProduct.name) {
+        if (newProduct.price > 0 && newProduct.amount > 0 && newProduct.name && newProduct.id) {
             dispatch(addProducts(newProduct));
             
             setProduct({ id: '', name: '', price: 0, amount: 0 });
