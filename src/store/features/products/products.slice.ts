@@ -2,8 +2,6 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { Product, ProductState } from "../../../@types/Product";
 import type { RootState } from "../../store";
 import { fetchAllProducts } from "./products.thunk";
-import { Response, ResponseProducts } from "../../../@types/Response";
-
 
 
 const initialState: ProductState = {
@@ -27,7 +25,7 @@ export const productSlice = createSlice({
         },
         addProducts: (state, action: PayloadAction<Product>) => {
             state.products.push(action.payload);
-        },
+        }
     },
     extraReducers: (builder) => {
         builder

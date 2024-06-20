@@ -5,9 +5,6 @@ import ProductListItem from "./ProductListItem";
 import InputBox from "./InputBox";
 import { useState } from "react";
 import cartIcon from "../assets/cart-shopping-solid.svg";
-//import { RootState } from "../store/store";
-//import { selectProducts } from "../store/features/products";
-//import { useDispatch, useSelector } from "react-redux";
 
 interface PropsProductList {
     products: Product[];
@@ -17,7 +14,6 @@ interface PropsProductList {
 const ProductList: React.FC<PropsProductList> = ({ products, handleCart }) => {
     
     const [ term, setTerm ] = useState<string>("");
-    //const dispatch = useDispatch();
     const dispatch = useAppDispatch();
 
     const handleAddToCart = (product: Product, quantity: number) => {

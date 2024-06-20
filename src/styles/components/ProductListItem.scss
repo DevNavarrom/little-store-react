@@ -3,7 +3,6 @@
 
 .container {
     border-radius: 1rem;
-    /* box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px; */
     box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
     background-color: $color_4;
     
@@ -11,7 +10,6 @@
     @include responsive-width("(min-width: 768px)", 25%); // md
 
     &:hover {
-        /* transition: 1 1s ease 0s; */
         animation: pulseRegular 1s ease 0s 1 normal forwards;
     }
 

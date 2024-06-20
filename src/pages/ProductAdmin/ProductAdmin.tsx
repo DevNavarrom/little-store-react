@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import {v4 as uuidv4} from 'uuid';
 import { Product } from "../../@types/Product";
-import { addProducts, setProducts } from "../../store/features/products/products.slice";
+import { addProducts } from "../../store/features/products/products.slice";
 import { useAppDispatch } from "../../store/hooks";
 import InputBox from "../../components/InputBox";
 import Button from "../../components/Button";
@@ -40,7 +40,6 @@ const ProductAdmin: React.FC = () => {
             dispatch(addProducts(product));
             setIsAdd(false);
             setProduct({id: '', name: '', price: 0, amount: 0});
-            console.log('MODIFY STATE:', product);
         }
     }, [isAdd, product, dispatch]);
 

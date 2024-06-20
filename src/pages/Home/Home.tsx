@@ -13,7 +13,7 @@ const Home: React.FC = () => {
 
   useEffect(() => {
     dispatch(fetchProducts());
-  }, [dispatch]);
+  }, [dispatch, products]);
 
   const handleCart = () => {
     setShowCart(!showCart);
@@ -21,7 +21,7 @@ const Home: React.FC = () => {
 
   return (
     <div className="w-full flex column justify-center items-center">
-      <ProductList products={products as Product[]} handleCart={handleCart} />
+      <ProductList products={products} handleCart={handleCart} />
       <div className={`${showCart ? '' : 'none'} fixed right-4 bottom-16 h-80`}>
         <Cart />
       </div>

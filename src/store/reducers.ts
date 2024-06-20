@@ -6,5 +6,3 @@ export const rootReducer = combineReducers({
   products: productSlice.reducer,
   cart: cartSlice.reducer
 })
-
-//export type RootState = ReturnType<typeof rootReducer>

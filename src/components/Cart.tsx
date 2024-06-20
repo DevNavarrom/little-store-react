@@ -4,6 +4,7 @@ import { useAppDispatch, useAppSelector } from "../store/hooks";
 import Button from "./Button";
 import CartItem from "./CartItem";
 import { ItemCart } from "../@types/ItemCard";
+import { updateProductStock } from "../store/features/products";
 
 const Cart: React.FC = () => {
 
@@ -26,28 +27,38 @@ const Cart: React.FC = () => {
         dispatch(updateQuantity({id, qty}));
     }
 
+    const handleUpdateStock = () => {
+        cart.items.map((item) => {
+            dispatch(updateProductStock({id: item.id, quantity: item.quantity}));
+        });
+        dispatch(clearCart());
+    }
+
     return (
         <div className="px-4 py-3 bg-light rounded-xl shadow h-full">
-            <h3 className="color-primary mb-4">Shopping Cart</h3>
-            <div className="flex justify-end mb-2">
-                <Button text="Clear Cart" onClick={handlerClearCart} />
-            </div>
-            <div className="flex column h-70 scroll-y">
-                {cart.items.map((item) => (
-                    <CartItem 
-                        key={item.id} 
-                        product={item}
-                        handleIncrement={handleIncrement}
-                        handleDecrement={handleDecrement}
-                        onChangeQuantity={handleOnChangeQty}
-                    />
-                ))}
-            </div>
-            <div className="flex row justify-center mt-4 bottom-1">
-                {/* <p className="text-base color-primary">Total:</p>
-                <p className="text-base color-primary font-600">${cart.total}</p> */}
-                <Button text={`Charge $${cart.total}`} />
-            </div>
+            {cart.items.length === 0 ?
+            <p className="color-primary font-600">No products selected</p>
+            :
+            (<div>
+                <h3 className="color-primary mb-4">Shopping Cart</h3>
+                <div className="flex justify-end mb-2">
+                    <Button text="Clear Cart" onClick={handlerClearCart} />
+                </div>
+                <div className="flex column h-70 scroll-y">
+                    {cart.items.map((item) => (
+                        <CartItem
+                            key={item.id}
+                            product={item}
+                            handleIncrement={handleIncrement}
+                            handleDecrement={handleDecrement}
+                            onChangeQuantity={handleOnChangeQty}
+                        />
+                    ))}
+                </div>
+                <div className="flex row justify-center mt-4 bottom-1">
+                    <Button onClick={handleUpdateStock} text={`Charge $${cart.total}`} />
+                </div>
+            </div>)}
         </div>
     )
 }

@@ -17,8 +17,6 @@
 		cursor: pointer;
 		margin-right: auto;
 		img {
-			/* height: 70px;
-			width: auto; */
 			transition: all 0.3s;
 			&:hover {
 				transform: scale(1.2);
@@ -43,20 +41,8 @@
 		}
 	}
 	.btn {
-		/* margin-left: 20px;
-		font-weight: 700;
-		color: $color_3;
-		padding: 9px 25px;
-		background: #eceff1;
-		border-radius: 50px; */
 		height: 32px;
 		width: 32px;
-		/* transition: all 0.3s ease 0s; */
-		/* &:hover {
-			background-color: $background-color_4;
-			color: $color_2;
-			transform: scale(1.1);
-		} */
 	}
 	.menu {
 		button {
@@ -86,7 +72,6 @@
 		z-index: 1;
 		left: 0;
 		top: 0;
-		/* background-color: $background-color_5; */
 		background: linear-gradient(220deg, $background-color_10 0%, $background-color_11 100%);
 		overflow: hidden;
 		transition: all 0.3s linear 0s;
@@ -97,7 +82,6 @@
 			width: 100vw;
 			flex-direction: column;
 			align-items: center;
-			/* transition: all 0.3s easeInOut 0s; */
 		}
 		.overlay-content {
 			display: flex;

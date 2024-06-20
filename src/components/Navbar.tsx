@@ -35,9 +35,6 @@ const Navbar = () => {
                     <Button text="Create" srcIcon={addIcon}/>
                 </Link>
             }
-            {/* <button className="btn rounded-25 bg-primary p-1 no-border pointer flex justify-center items-center">
-                <img src={cartIcon} width={16} height={16} alt="Cart Icon" />
-            </button> */}
             
             <a onClick={toggleMenu} className="menu" href="#">
                 <button>

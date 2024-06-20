@@ -1,8 +1,4 @@
 
-/* export type Response<T> = {
-    data: ResponseProducts<T>,
-} */
-
 export type Response<T> = {
     data: {
         products: T[]
