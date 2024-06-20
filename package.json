@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+    "start": "serve dist -s -n -L -p $PORT",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
@@ -18,6 +19,7 @@
     "react-router-dom": "^6.23.1",
     "redux": "^5.0.1",
     "sass": "^1.77.5",
+    "serve": "^14.2.3",
     "uuid": "^10.0.0",
     "yup": "^1.4.0"
   },
