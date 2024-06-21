@@ -130,6 +130,10 @@
     flex-direction: column;
 }
 
+.w-4 {
+    width: 1rem;
+}
+
 .w-6 {
     width: 1.5rem;
 }
@@ -192,6 +196,10 @@
 
 .w-90-sm {
     max-height: 90%;
+}
+
+.h-4 {
+    height: 1rem;
 }
 
 .h-6 {
@@ -351,12 +359,20 @@
     bottom: 4rem;
 }
 
+.right-0 {
+    right: 0px;
+}
+
 .right-1 {
     right: 0.25rem;
 }
 
 .right-4 {
     right: 1rem;
+}
+
+.top-0 {
+    top: 0px;
 }
 
 .absolute {
