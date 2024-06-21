@@ -42,9 +42,9 @@ const Cart: React.FC = () => {
             (<div>
                 <h3 className="color-primary mb-4">Shopping Cart</h3>
                 <div className="flex justify-end mb-2">
-                    <Button text="Clear Cart" onClick={handlerClearCart} />
+                    <Button label="Clear Cart" onClick={handlerClearCart} />
                 </div>
-                <div className="flex column h-70 scroll-y">
+                <div className="flex column scroll-y h-65vh p-1">
                     {cart.items.map((item) => (
                         <CartItem
                             key={item.id}
@@ -56,7 +56,7 @@ const Cart: React.FC = () => {
                     ))}
                 </div>
                 <div className="flex row justify-center mt-4 bottom-1">
-                    <Button onClick={handleUpdateStock} text={`Charge $${cart.total}`} />
+                    <Button onClick={handleUpdateStock} label={`Charge $${cart.total}`} />
                 </div>
             </div>)}
         </div>

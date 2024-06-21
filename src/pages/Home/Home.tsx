@@ -26,7 +26,7 @@ const Home: React.FC = () => {
   return (
     <div className="w-full flex column justify-center items-center">
       <ProductList products={products} handleCart={handleCart} />
-      <div className={`${showCart ? '' : 'none'} fixed right-4 bottom-16 h-80`}>
+      <div className={`${showCart ? '' : 'none'} fixed right-4 bottom-16 h-max-80 w-90-sm h-max-sm`}>
         <Cart />
       </div>
     </div>

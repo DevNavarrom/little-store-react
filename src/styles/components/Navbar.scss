@@ -46,17 +46,7 @@
 	}
 	.menu {
 		button {
-			margin-left: 20px;
-			font-weight: 700;
-			color: $color_3;
-			padding: 9px 25px;
-			background: transparent;
-			border: none;
-			border-radius: 50px;
-			cursor: pointer;
-			transition: all 0.3s ease 0s;
 			&:hover {
-				background-color: $background-color_3;
 				color: $color_2;
 				transform: scale(1.1);
 			}
@@ -72,7 +62,7 @@
 		z-index: 1;
 		left: 0;
 		top: 0;
-		background: linear-gradient(220deg, $background-color_10 0%, $background-color_11 100%);
+		background: linear-gradient(220deg, $background-color_11 0%, $background-color_10 100%);
 		overflow: hidden;
 		transition: all 0.3s linear 0s;
 

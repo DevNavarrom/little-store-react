@@ -39,7 +39,7 @@ const ProductAdmin: React.FC = () => {
                     <InputBox name="price" type="number" placeholder="Price" value={String(product.price)} onChange={handleChange} />
                     <InputBox name="amount" type="number" placeholder="Stock" value={String(product.amount)} onChange={handleChange} />
                 </div>
-                <Button text="Add Product" srcIcon={addIcon} onClick={handleAddProduct} />
+                <Button label="Add Product" srcIcon={addIcon} onClick={handleAddProduct} />
             </div>
         </div>
     )

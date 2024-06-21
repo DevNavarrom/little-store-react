@@ -30,6 +30,12 @@
     }
 }
 
+@mixin responsive-height($media, $height-value) {
+    @media #{$media} {
+        height: $height-value;
+    }
+}
+
 @function rem($value) {
     $rem-value: calc($value / $base-font-size);
     @return $rem-value rem;
@@ -184,6 +190,10 @@
     @include responsive-width("(max-width: 640px)", 80%); // sm
 }
 
+.w-90-sm {
+    max-height: 90%;
+}
+
 .h-6 {
     height: 1.5rem;
 }
@@ -200,8 +210,20 @@
     height: 70%; 
 }
 
+.h-65vh {
+    height: 65vh; 
+}
+
+.h-max-80 {
+    max-height: 80%;
+}
+
 .h-full {
     height: 100%;
+}
+
+.h-max-sm {
+    max-height: 90%;
 }
 
 .gap-1 {
@@ -359,6 +381,14 @@
 
 .rounded-xl {
     border-radius: 1rem;
+}
+
+.rounded-2xl {
+    border-radius: 2rem;
+}
+
+.rounded-3xl {
+    border-radius: 3rem;
 }
 
 .rounded-25 {
